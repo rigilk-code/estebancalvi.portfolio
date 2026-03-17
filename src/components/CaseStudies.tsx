@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const caseStudies = [
   {
     id: 1,
+    slug: "recargapay-design-system",
     title: "RecargaPay Design System",
     category: "Design Systems",
     description:
