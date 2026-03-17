@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const caseStudies = [
   {
     id: 1,
+    slug: "recargapay-design-system",
     title: "RecargaPay Design System",
     category: "Design Systems",
     description:
@@ -11,6 +13,7 @@ const caseStudies = [
   },
   {
     id: 2,
+    slug: "fintech-ux-overhaul",
     title: "Fintech UX Overhaul",
     category: "Product Design",
     description:
@@ -19,6 +22,7 @@ const caseStudies = [
   },
   {
     id: 3,
+    slug: "ecommerce-ui-modernization",
     title: "E-Commerce UI Modernization",
     category: "Frontend Architecture",
     description:
@@ -41,6 +45,7 @@ const CaseStudies = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {caseStudies.map((study, index) => (
           <ScrollReveal key={study.id} delay={index * 0.1}>
+            <Link to={`/case/${study.slug}`} className="block h-full">
             <article className="border-2 border-foreground bg-secondary p-6 flex flex-col h-full group cursor-pointer hover:shadow-[6px_6px_0px_0px_hsl(var(--accent))] transition-shadow duration-200">
               <span className="text-display-small text-accent font-heading mb-4">
                 {String(index + 1).padStart(2, "0")}
@@ -65,6 +70,7 @@ const CaseStudies = () => {
                 ))}
               </div>
             </article>
+            </Link>
           </ScrollReveal>
         ))}
       </div>
