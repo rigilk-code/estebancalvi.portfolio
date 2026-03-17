@@ -43,14 +43,15 @@ const experience = [
 
 const ResumeSection = () => {
   return (
-    <section id="resume" className="py-24 px-8 md:px-16 lg:px-40 bg-secondary relative">
-      {/* Geometric miscellanies */}
-      <div className="absolute top-8 left-8 w-12 h-[2px] bg-accent" />
-      <div className="absolute top-8 left-8 w-[2px] h-12 bg-accent" />
-      <div className="absolute bottom-8 right-8 w-8 h-8 bg-foreground" />
+    <section id="resume" className="py-24 px-6 md:px-16 lg:px-40 bg-secondary relative">
+      {/* Geometric miscellanies — desktop only */}
+      <div className="absolute top-8 left-8 w-12 h-[2px] bg-accent hidden md:block" />
+      <div className="absolute top-8 left-8 w-[2px] h-12 bg-accent hidden md:block" />
+      <div className="absolute bottom-8 right-8 w-8 h-8 bg-foreground hidden md:block" />
 
-      <p className="text-label-large text-accent mb-2">Curriculum Vitae</p>
-      <h2 className="text-display-small mb-16">Resume</h2>
+      <ScrollReveal>
+        <h2 className="text-display-medium md:text-display-large mb-16">Resume</h2>
+      </ScrollReveal>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
         {/* Experience column */}
