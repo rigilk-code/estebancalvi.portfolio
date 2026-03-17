@@ -13,6 +13,7 @@ const caseStudies = [
   },
   {
     id: 2,
+    slug: "fintech-ux-overhaul",
     title: "Fintech UX Overhaul",
     category: "Product Design",
     description:
