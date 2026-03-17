@@ -22,6 +22,7 @@ const caseStudies = [
   },
   {
     id: 3,
+    slug: "ecommerce-ui-modernization",
     title: "E-Commerce UI Modernization",
     category: "Frontend Architecture",
     description:
