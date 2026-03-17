@@ -1,21 +1,22 @@
 import portrait from "@/assets/esteban-portrait.png";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen pt-20 relative overflow-hidden">
-      {/* Red sidebar */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-accent z-0" />
+      {/* Red sidebar — hidden on mobile */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-accent z-0 hidden md:block" />
 
-      {/* Geometric miscellanies */}
+      {/* Geometric miscellanies — hidden on mobile */}
       <div className="absolute top-32 right-12 w-16 h-16 bg-foreground hidden md:block" />
       <div className="absolute bottom-24 right-1/4 w-8 h-8 bg-accent hidden md:block" />
       <div className="absolute top-1/2 right-8 w-[2px] h-32 bg-foreground hidden md:block" />
       <div className="absolute bottom-48 left-40 w-12 h-[2px] bg-foreground hidden lg:block" />
       <div className="absolute top-40 left-40 w-6 h-6 bg-accent hidden lg:block" />
 
-      <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-8 md:px-16 lg:px-40 py-16 lg:py-24">
+      <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:px-40 py-16 lg:py-24">
         {/* Portrait */}
-        <div className="flex-shrink-0 ml-8 md:ml-8 lg:ml-0">
+        <ScrollReveal className="flex-shrink-0 md:ml-8 lg:ml-0">
           <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--accent))]">
             <img
               src={portrait}
@@ -23,10 +24,10 @@ const HeroSection = () => {
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Typographic play */}
-        <div className="max-w-2xl">
+        <ScrollReveal className="max-w-2xl" delay={0.15}>
           <p className="text-label-large text-accent mb-4">Portfolio</p>
           <h1 className="text-display-medium md:text-display-large mb-8 leading-tight">
             My name is{" "}
@@ -55,7 +56,7 @@ const HeroSection = () => {
               composition, storytelling, and detail-oriented UI design.
             </p>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
