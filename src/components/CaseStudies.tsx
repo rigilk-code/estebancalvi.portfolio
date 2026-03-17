@@ -70,6 +70,7 @@ const CaseStudies = () => {
                 ))}
               </div>
             </article>
+            </Link>
           </ScrollReveal>
         ))}
       </div>
