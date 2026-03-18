@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { Github } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+const navItems = [
+  { label: "Home", hash: "home" },
+  { label: "Case Studies", hash: "cases" },
+  { label: "Resume", hash: "resume" },
+  { label: "Contact", hash: "contact" },
+];
+
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -20,6 +27,11 @@ const Header = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (hash: string) => {
+    window.location.hash = `/#${hash}`;
+    setOpen(false);
+  };
 
   return (
     <header
@@ -48,27 +60,25 @@ const Header = () => {
         </button>
         <nav className="hidden md:flex gap-8 items-center">
           {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="group relative text-label-large text-foreground pb-0 transition-none"
+            <button
+              key={item.hash}
+              onClick={() => handleNavClick(item.hash)}
+              className="group relative text-label-large text-foreground pb-0 transition-none bg-none border-none p-0 cursor-pointer"
             >
               {item.label}
               <span className="absolute left-0 -bottom-1.5 h-[2px] w-0 bg-accent transition-all duration-300 ease-out group-hover:w-full" />
-            </a>
+            </button>
           ))}
 
-          <span className="w-[2px] h-5 bg-foreground/30" />
-
           {/* Language switcher */}
-          <div className="flex items-center gap-1 text-label-large">
+          <div className="flex items-center gap-3 text-label-large px-4">
             <button
               onClick={() => switchLang("en")}
               className={`transition-colors duration-200 ${lang === "en" ? "text-accent" : "text-foreground/50 hover:text-foreground"}`}
             >
               EN
             </button>
-            <span className="text-foreground/30">|</span>
+            <span className="w-[2px] h-5 bg-foreground/30" />
             <button
               onClick={() => switchLang("es")}
               className={`transition-colors duration-200 ${lang === "es" ? "text-accent" : "text-foreground/50 hover:text-foreground"}`}
@@ -92,14 +102,13 @@ const Header = () => {
       {open && (
         <nav className="md:hidden border-t-2 border-foreground bg-background px-6 py-4 flex flex-col gap-4">
           {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-label-large text-foreground hover:text-accent transition-none"
-              onClick={() => setOpen(false)}
+            <button
+              key={item.hash}
+              onClick={() => handleNavClick(item.hash)}
+              className="text-label-large text-foreground hover:text-accent transition-none bg-none border-none p-0 text-left w-full cursor-pointer"
             >
               {item.label}
-            </a>
+            </button>
           ))}
           <div className="flex items-center gap-3 pt-2 border-t border-foreground/20">
             <div className="flex items-center gap-1 text-label-large">
