@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import portrait from "@/assets/esteban-portrait.png";
 import ScrollReveal from "@/components/ScrollReveal";
 
