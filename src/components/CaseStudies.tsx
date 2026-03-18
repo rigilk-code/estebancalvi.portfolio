@@ -12,7 +12,7 @@ const CaseStudies = () => {
         <h2 className="text-display-medium md:text-display-large mb-16">Case Studies</h2>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {caseStudies.map((study, index) => (
           <ScrollReveal key={study.id} delay={index * 0.1}>
             <Link to={`/case/${study.slug}`} className="block h-full">
