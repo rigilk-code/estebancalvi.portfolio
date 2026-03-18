@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen pt-20 relative overflow-hidden">
       {/* Red sidebar — hidden on mobile */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-accent z-0 hidden md:block" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-24 bg-accent z-0 hidden md:block" />
 
       {/* Geometric miscellanies — hidden on mobile */}
       <div className="absolute top-32 right-12 w-16 h-16 bg-foreground hidden md:block" />
@@ -31,22 +31,12 @@ const HeroSection = () => {
         <ScrollReveal className="max-w-2xl" delay={0.15}>
           <p className="text-label-large text-accent mb-4">Portfolio</p>
           <h1 className="text-display-medium md:text-display-large mb-8 leading-tight">
-            My name is{" "}
-            <span className="text-accent">Esteban Calvi</span>, I'm a Sr.
-            Senior Product Designer and UI Architect with 10+ years of
-            experience building scalable digital products.
+            My name is <br /><span className="text-accent">Esteban Calvi</span>,
           </h1>
           <div className="w-24 h-[3px] bg-foreground mb-8" />
           <div className="space-y-4 text-body-large leading-relaxed">
             <p>
-              Background in Graphic Design (University of Buenos Aires) with
-              deep expertise in UI architecture, design systems, and frontend
-              development.
-            </p>
-            <p>
-              Specialized in fintech and enterprise environments, working across
-              design and engineering to deliver robust, accessible, and visually
-              refined interfaces.
+              Sr. Product Designer and UX Engineer with 10+ years of experience building scalable digital products.
             </p>
           </div>
           <Link

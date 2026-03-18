@@ -16,14 +16,13 @@ const About = () => {
 
         <ScrollReveal>
           <p className="text-label-large text-accent mb-2">About</p>
-          <h1 className="text-display-large mb-8">Presentation Letter</h1>
+          <h1 className="text-display-large mb-8">My name is <span className="text-accent">Esteban Calvi</span></h1>
         </ScrollReveal>
 
         <div className="border-t-2 border-foreground pt-12 space-y-6">
           <ScrollReveal>
-            <p className="text-body-large leading-relaxed">
-              My name is Esteban Calvi. I'm a Sr. Senior Product Designer and UI
-              Architect with 10+ years of experience building scalable digital
+            <p className="text-body-large leading-relaxed font-semibold">
+              I'm a Sr. Product Designer and UX Engineer with 10+ years of experience building scalable digital
               products.
             </p>
           </ScrollReveal>
