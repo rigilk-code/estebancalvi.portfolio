@@ -81,6 +81,18 @@ function renderBlock(block: ContentBlock) {
     case "divider":
       return <hr className="border-t-2 border-foreground my-8" />;
 
+    case "cta":
+      return (
+        <a
+          href={block.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block border-2 border-foreground bg-accent text-accent-foreground px-6 py-3 text-label-large hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-shadow duration-200"
+        >
+          {block.text}
+        </a>
+      );
+
     default:
       return null;
   }
