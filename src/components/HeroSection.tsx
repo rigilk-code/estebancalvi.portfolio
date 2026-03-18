@@ -29,7 +29,7 @@ const HeroSection = () => {
 
         {/* Typographic play */}
         <ScrollReveal className="max-w-2xl" delay={0.15}>
-          <p className="text-label-large text-accent mb-4">Portfolio</p>
+          <p className="text-label-large text-accent mb-4">About me</p>
           <h1 className="text-display-medium md:text-display-large mb-8 leading-tight">
             My name is <br /><span className="text-accent">Esteban Calvi</span>,
           </h1>

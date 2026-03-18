@@ -27,8 +27,8 @@ const Header = () => {
         className="flex items-center justify-between px-6 md:px-12 transition-all duration-500 ease-out"
         style={{ paddingTop: scrolled ? '1rem' : '2.5rem', paddingBottom: scrolled ? '1rem' : '2.5rem' }}
       >
-        <a href="#home" className="flex items-center gap-3">
-          <span className="w-[1.1em] h-[1.1em] rounded-full bg-foreground inline-block" style={{ fontSize: '0.875rem' }} />
+        <a href="#home" className="flex items-center gap-2">
+          <span className="w-[0.7em] h-[0.7em] rounded-full bg-foreground inline-block" style={{ fontSize: '0.875rem' }} />
           <span className="text-label-large text-accent">Esteban Calvi</span>
         </a>
         <button
