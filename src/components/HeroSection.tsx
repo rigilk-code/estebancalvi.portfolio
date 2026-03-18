@@ -45,17 +45,15 @@ const HeroSection = () => {
             <p>
               Specialized in fintech and enterprise environments, working across
               design and engineering to deliver robust, accessible, and visually
-              refined interfaces. Strong focus on component libraries, animated
-              micro-interactions, and developer-friendly UI systems. Experienced
-              collaborating with cross-functional teams and leveraging modern
-              tooling, including AI-assisted development workflows.
-            </p>
-            <p>
-              In parallel to my engineering work, I'm an active and published
-              comic book artist. This background informs my approach to visual
-              composition, storytelling, and detail-oriented UI design.
+              refined interfaces.
             </p>
           </div>
+          <Link
+            to="/about"
+            className="inline-block mt-6 border-2 border-foreground bg-accent text-accent-foreground px-6 py-3 text-label-large hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-shadow duration-200"
+          >
+            Read full presentation letter →
+          </Link>
         </ScrollReveal>
       </div>
     </section>
