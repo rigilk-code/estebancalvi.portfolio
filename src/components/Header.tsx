@@ -2,23 +2,16 @@ import { useState, useEffect } from "react";
 import { Github } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const navItems = [
-  { label: "Home", hash: "home" },
-  { label: "Case Studies", hash: "cases" },
-  { label: "Resume", hash: "resume" },
-  { label: "Contact", hash: "contact" },
-];
-
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { lang, t, switchLang, localePath } = useLanguage();
 
   const navItems = [
-    { label: t.nav.home, href: "#home" },
-    { label: t.nav.caseStudies, href: "#cases" },
-    { label: t.nav.resume, href: "#resume" },
-    { label: t.nav.contact, href: "#contact" },
+    { label: t.nav.home, hash: "home" },
+    { label: t.nav.caseStudies, hash: "cases" },
+    { label: t.nav.resume, hash: "resume" },
+    { label: t.nav.contact, hash: "contact" },
   ];
 
   useEffect(() => {
@@ -34,9 +27,7 @@ const Header = () => {
   };
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 bg-background border-b-2 border-foreground transition-all duration-500 ease-out"
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b-2 border-foreground transition-all duration-500 ease-out">
       <div
         className="flex items-center justify-between px-6 md:px-12 transition-all duration-500 ease-out"
         style={{ paddingTop: scrolled ? '1rem' : '2.5rem', paddingBottom: scrolled ? '1rem' : '2.5rem' }}
@@ -45,18 +36,27 @@ const Header = () => {
           <span className="w-[0.7em] h-[0.7em] rounded-full bg-foreground inline-block" style={{ fontSize: '0.875rem' }} />
           <span className="text-label-large text-accent">Esteban Calvi</span>
         </a>
+        {/* Hamburger / X with animated lines */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground relative w-7 h-7 flex items-center justify-center"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {open ? (
-              <path d="M6 6l12 12M6 18L18 6" />
-            ) : (
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
+          <span
+            className={`absolute h-[2px] w-6 bg-foreground rounded transition-all duration-300 ease-out ${
+              open ? "rotate-45 translate-y-0" : "-translate-y-2"
+            }`}
+          />
+          <span
+            className={`absolute h-[2px] w-6 bg-foreground rounded transition-all duration-300 ease-out ${
+              open ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"
+            }`}
+          />
+          <span
+            className={`absolute h-[2px] w-6 bg-foreground rounded transition-all duration-300 ease-out ${
+              open ? "-rotate-45 translate-y-0" : "translate-y-2"
+            }`}
+          />
         </button>
         <nav className="hidden md:flex gap-8 items-center">
           {navItems.map((item) => (
@@ -69,8 +69,6 @@ const Header = () => {
               <span className="absolute left-0 -bottom-1.5 h-[2px] w-0 bg-accent transition-all duration-300 ease-out group-hover:w-full" />
             </button>
           ))}
-
-          {/* Language switcher */}
           <div className="flex items-center gap-3 text-label-large px-4">
             <button
               onClick={() => switchLang("en")}
@@ -86,8 +84,6 @@ const Header = () => {
               ES
             </button>
           </div>
-
-          {/* GitHub link */}
           <a
             href="https://github.com/rigilk-code/estebancalvi.portfolio"
             target="_blank"
@@ -99,18 +95,35 @@ const Header = () => {
           </a>
         </nav>
       </div>
-      {open && (
-        <nav className="md:hidden border-t-2 border-foreground bg-background px-6 py-4 flex flex-col gap-4">
-          {navItems.map((item) => (
+      {/* Mobile dropdown with animated transition */}
+      <div
+        className={`md:hidden border-t-2 border-foreground bg-background overflow-hidden transition-all duration-300 ease-out ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <nav className="px-6 py-4 flex flex-col gap-4">
+          {navItems.map((item, i) => (
             <button
               key={item.hash}
               onClick={() => handleNavClick(item.hash)}
-              className="text-label-large text-foreground hover:text-accent transition-none bg-none border-none p-0 text-left w-full cursor-pointer"
+              className="text-label-large text-foreground hover:text-accent transition-all duration-200 bg-none border-none p-0 text-left w-full cursor-pointer"
+              style={{
+                transform: open ? "translateX(0)" : "translateX(-20px)",
+                opacity: open ? 1 : 0,
+                transition: `transform 300ms ease-out ${i * 60}ms, opacity 300ms ease-out ${i * 60}ms`,
+              }}
             >
               {item.label}
             </button>
           ))}
-          <div className="flex items-center gap-3 pt-2 border-t border-foreground/20">
+          <div
+            className="flex items-center gap-3 pt-2 border-t border-foreground/20"
+            style={{
+              transform: open ? "translateX(0)" : "translateX(-20px)",
+              opacity: open ? 1 : 0,
+              transition: `transform 300ms ease-out ${navItems.length * 60}ms, opacity 300ms ease-out ${navItems.length * 60}ms`,
+            }}
+          >
             <div className="flex items-center gap-1 text-label-large">
               <button
                 onClick={() => { switchLang("en"); setOpen(false); }}
@@ -137,7 +150,7 @@ const Header = () => {
             </a>
           </div>
         </nav>
-      )}
+      </div>
     </header>
   );
 };
