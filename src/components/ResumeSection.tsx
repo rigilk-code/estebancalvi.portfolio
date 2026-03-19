@@ -96,7 +96,7 @@ const ResumeSection = () => {
       <ScrollReveal>
         <div className="mt-16 pt-8 border-t-2 border-foreground">
           <a
-            href="/Esteban-Calvi-Resume.pdf"
+            href={r.downloadResumeLink}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-foreground bg-accent text-accent-foreground px-6 py-3 text-label-large hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:scale-[1.02] focus:scale-[1.02] transition-all duration-200"

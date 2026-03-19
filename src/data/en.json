@@ -74,6 +74,7 @@
     "languages": "Languages",
     "coreSkills": "Core Skills",
     "downloadResume": "Download full resume (PDF) →",
+    "downloadResumeLink": "/public/esteban.calvi.en.sm.pdf",
     "experience": [
       {
         "role": "UI Developer",

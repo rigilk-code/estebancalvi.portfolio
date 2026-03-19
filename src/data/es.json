@@ -6,11 +6,11 @@
     "contact": "Contacto"
   },
   "hero": {
-    "label": "Sobre mí",
-    "heading1": "Mi nombre es",
+    "label": "Acerca de mí",
+    "heading1": "Me llamo",
     "heading2": "Esteban Calvi",
     "description": "Sr. Product Designer e Ingeniero UX con más de 10 años de experiencia construyendo productos digitales escalables.",
-    "cta": "Leer carta de presentación completa →"
+    "cta": "Leer mi carta de presentación completa →"
   },
   "caseStudies": {
     "sectionTitle": "Casos de Estudio"
@@ -74,6 +74,7 @@
     "languages": "Idiomas",
     "coreSkills": "Habilidades Principales",
     "downloadResume": "Descargar currículum completo (PDF) →",
+    "downloadResumeLink": "/public/esteban.calvi.es.sm.pdf",
     "experience": [
       {
         "role": "UI Developer",
@@ -135,8 +136,8 @@
   },
   "about": {
     "backLink": "← Volver al inicio",
-    "label": "Sobre mí",
-    "heading1": "Mi nombre es",
+    "label": "Acerca de mí",
+    "heading1": "Me llamo",
     "heading2": "Esteban Calvi",
     "paragraphs": [
       "Soy Sr. Product Designer e Ingeniero UX con más de 10 años de experiencia construyendo productos digitales escalables.",
