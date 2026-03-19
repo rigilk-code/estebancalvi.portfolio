@@ -43,7 +43,7 @@ npm run dev
 ```
 
 🔗 Live Demo
-[View Portfolio](#0)
+[View Portfolio](https://rigilk-code.github.io/estebancalvi.portfolio)
 
 ## 📌 Notes
 This project is continuously evolving
