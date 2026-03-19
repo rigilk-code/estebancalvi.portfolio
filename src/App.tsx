@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
-const AppRoutes = () => (
+const LocalizedRoutes = () => (
   <LanguageProvider>
     <Routes>
       <Route path="/" element={<Index />} />
@@ -29,29 +29,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/es/*" element={<LangWrapper lang="es" />} />
-          <Route path="/*" element={<LangWrapper lang="en" />} />
+          <Route path="/es/*" element={<LocalizedRoutes />} />
+          <Route path="/*" element={<LocalizedRoutes />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
-
-function LangWrapper({ lang }: { lang: string }) {
-  return (
-    <Routes>
-      <Route path="*" element={
-        <LanguageProvider>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/case/:slug" element={<CaseStudy />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </LanguageProvider>
-      } />
-    </Routes>
-  );
-}
 
 export default App;
