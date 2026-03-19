@@ -1,19 +1,20 @@
 import { useParams, Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContentRenderer from "@/components/ContentRenderer";
-import { caseStudies } from "@/data/caseStudies";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
-  const study = caseStudies.find((s) => s.slug === slug);
+  const { t, localePath } = useLanguage();
+  const study = t.cases.find((s) => s.slug === slug);
 
   if (!study) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-display-medium mb-4">Case study not found</h1>
-          <Link to="/" className="text-accent text-label-large hover:underline">
-            ← Back home
+          <Link to={localePath("/")} className="text-accent text-label-large hover:underline">
+            {t.caseStudyPage.backLink}
           </Link>
         </div>
       </div>
@@ -25,10 +26,10 @@ const CaseStudy = () => {
       <div className="px-6 md:px-16 lg:px-40 py-16 max-w-4xl">
         <ScrollReveal>
           <Link
-            to="/#cases"
+            to={`${localePath("/")}#cases`}
             className="text-label-large text-muted-foreground hover:text-accent transition-colors duration-200 inline-block mb-12"
           >
-            ← Back to case studies
+            {t.caseStudyPage.backLink}
           </Link>
         </ScrollReveal>
 

@@ -1,4 +1,9 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const ContactFooter = () => {
+  const { t } = useLanguage();
+  const c = t.contact;
+
   return (
     <footer id="contact" className="bg-accent text-accent-foreground py-20 px-8 md:px-16 lg:px-40 relative overflow-hidden">
       {/* Geometric miscellanies */}
@@ -7,10 +12,10 @@ const ContactFooter = () => {
 
       <div className="relative z-10 max-w-3xl">
         <p className="text-label-large text-accent-foreground/70 mb-2">
-          Get In Touch
+          {c.label}
         </p>
         <h2 className="font-heading text-display-small mb-8">
-          Let's build something together.
+          {c.heading}
         </h2>
 
         <div className="space-y-4 mb-12">
@@ -32,10 +37,10 @@ const ContactFooter = () => {
 
         <div className="border-t border-accent-foreground/30 pt-8 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
           <p className="text-body-medium text-accent-foreground/70">
-            © {new Date().getFullYear()} Esteban Calvi. All rights reserved.
+            {c.copyright.replace("{year}", String(new Date().getFullYear()))}
           </p>
           <p className="text-body-medium text-accent-foreground/70">
-            Buenos Aires, Argentina
+            {c.location}
           </p>
         </div>
       </div>
