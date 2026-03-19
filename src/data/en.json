@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "home": "Home",
+    "caseStudies": "Case Studies",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "About me",
+    "heading1": "My name is",
+    "heading2": "Esteban Calvi",
+    "description": "Sr. Product Designer and UX Engineer with 10+ years of experience building scalable digital products.",
+    "cta": "Read full presentation letter →"
+  },
+  "caseStudies": {
+    "sectionTitle": "Case Studies"
+  },
+  "cases": [
+    {
+      "slug": "wenance-design-system",
+      "title": "Wenance: Same Company, Multiple Brands",
+      "category": "Design Systems",
+      "description": "Built a modular design system that enabled rapid MVP launches under different brands for a fintech company with multiple product lines.",
+      "tags": ["Design Systems", "React", "Theming", "Multi-brand"],
+      "body": [
+        { "type": "heading", "text": "The Challenge: Rapid MVP Launch" },
+        { "type": "paragraph", "text": "Wenance set out to build a large suite of financial products, starting from scratch. The first lending app had to be up and running in less than two weeks. On top of that, the company needed the ability to switch brands quickly — transforming to digital what had previously been done analogically." },
+        { "type": "callout", "text": "The launch of the first MVP was successful, and we returned to work on the rest of the financial products suite. But we knew we needed a more scalable approach.", "variant": "success" },
+        { "type": "heading", "text": "Phase 1: The Brand Object" },
+        { "type": "paragraph", "text": "Our first solution was a set of fixed values — logo, typography, and a limited palette — that allowed us to spin up a quick MVP for a new brand in a matter of hours. It solved the delivery expectations, but at a cost: the UI risked feeling rigid and monotonous." },
+        { "type": "heading", "text": "Gaining Flexibility: The Theme Layer" },
+        { "type": "paragraph", "text": "To address rigidity, we introduced an intermediate layer: the Brand Theme. This sat between the Brand Object (basic constants) and the Product (the final application), allowing us to make variations on how visual values were assigned and distributed across the app." },
+        { "type": "list", "items": ["Brand Object — stores basic brand constants: logo, typography, limited palette.", "Brand Theme — introduces variations on how those values are distributed in the UI.", "Product — receives and renders the final visual definitions."] },
+        { "type": "paragraph", "text": "This three-layer architecture opened the door to more complex and visually interesting patterns while maintaining the speed of brand creation." },
+        { "type": "heading", "text": "Brand Examples" },
+        { "type": "paragraph", "text": "Welp was the company's flagship product, targeting a higher-income demographic. Its theme leaned into a more premium, polished aesthetic. Mango, on the other hand, targeted a medium-income audience with a tropical, approachable feel — same system, completely different personality." },
+        { "type": "heading", "text": "Scaling Further" },
+        { "type": "paragraph", "text": "We proceeded to abstract UI responsibilities into separate repositories: Brand Attributes (brand object + theme), a shared UI Library (building blocks that worked in tandem with brand attributes), and the Products themselves as consumers of both." },
+        { "type": "callout", "text": "The final evolution: we built a Brand Creation CRM that allowed non-technical staff — like marketing — to create MVPs for new brands by assembling their own brand objects. Technical staff would later refine as needed.", "variant": "info" },
+        { "type": "divider" },
+        { "type": "cta", "text": "View the full presentation →", "href": "https://docs.google.com/presentation/d/10a8UjC9g4OHefRCbkInq8jvuZ5YHjJfdqCw5oNRfh0I/edit?usp=sharing" }
+      ]
+    },
+    {
+      "slug": "duollar-crypto-platform",
+      "title": "Duollar: Quick Decisions for Maximal Impact",
+      "category": "Product Design",
+      "description": "Designed the visual identity and UI for a crypto trading platform under tight budget constraints — every design decision had to count.",
+      "tags": ["UI Design", "Branding", "Crypto", "Figma"],
+      "body": [
+        { "type": "heading", "text": "Context: Budget Restrictions" },
+        { "type": "paragraph", "text": "In 2021, Duollar was intended to be a platform for spot trading between fiat currencies and digital assets, tailored to the Argentine financial market. Being a financial platform meant the backend needed to be robust and secure — and most of the budget went there. The visual design had to be done in a very limited window, laying foundations the dev team could evolve on their own." },
+        { "type": "callout", "text": "We could make very few choices and decisions. We had to make sure each one counted.", "variant": "warning" },
+        { "type": "heading", "text": "Decision 1: Typography" },
+        { "type": "paragraph", "text": "We chose Arvo Bold by Anton Koovit as the heading font — an alternative to Rockwell (1934), a slab serif intended to give texts a bold, distinctive voice. It was paired with Montserrat by Julieta Ulanovsky for body text, balancing personality with readability." },
+        { "type": "heading", "text": "Decision 2: Color Palette" },
+        { "type": "paragraph", "text": "Numbers are cold. A bunch of numbers together feel even colder. We used the color palette as a counterweight — making the platform feel warmer and more approachable. Since the project had no defined branding when we came on board, this palette ultimately became the brand identity." },
+        { "type": "heading", "text": "Decision 3: Iconography" },
+        { "type": "paragraph", "text": "Icons can make a number-heavy interface feel lighter. Custom icons were out of budget, and using a ubiquitous family like Material Icons risked diluting brand identity. We found a limited but original set of financial icons that struck the right balance." },
+        { "type": "heading", "text": "Decision 4: Image Processing" },
+        { "type": "paragraph", "text": "Since we'd only be on the project for a limited time, we developed a simple image-processing algorithm that enabled developers to generate on-brand visuals autonomously — ensuring visual consistency would survive our departure." },
+        { "type": "heading", "text": "Decision 5: Conversational Interface" },
+        { "type": "paragraph", "text": "Everything feels easier when it looks like you're speaking to a real person — especially when dealing with hard numbers. A true conversational interface was out of scope, but we designed the UI to mimic that feel. This was 2021, well before ChatGPT made conversational UIs mainstream." },
+        { "type": "callout", "text": "With these five decisions locked in, we created a complete set of template screens — landing pages, forms, mobile views, calls to action, and a type system — giving the dev team everything they needed to continue building.", "variant": "success" },
+        { "type": "divider" },
+        { "type": "cta", "text": "View the full presentation →", "href": "https://docs.google.com/presentation/d/1bbAobDY-hjwaYA-gYO6ZR7dOulbqChINylosvDPbMoY/edit?usp=sharing" }
+      ]
+    }
+  ],
+  "resume": {
+    "sectionTitle": "Resume",
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "languages": "Languages",
+    "coreSkills": "Core Skills",
+    "downloadResume": "Download full resume (PDF) →",
+    "experience": [
+      {
+        "role": "UI Developer",
+        "company": "RecargaPay (Brazil)",
+        "period": "Jul 2019 – Nov 2025",
+        "bullets": [
+          "Led the design and implementation of a company-wide UI component library now used across multiple core products, including the mobile app.",
+          "Collaborated closely with product, design, and engineering teams to standardize interaction patterns and improve development velocity.",
+          "Contributed to scalable frontend architecture supporting React and React Native platforms."
+        ],
+        "tech": "TypeScript, React, React Native, Node.js, Android, iOS"
+      },
+      {
+        "role": "UX Lead / Frontend Developer",
+        "company": "Wenance",
+        "period": "Apr 2018 – Jun 2019",
+        "bullets": [
+          "Developed and maintained frontend features for financial products in a fast-paced fintech environment.",
+          "Worked closely with designers to translate UX definitions into scalable UI implementations."
+        ],
+        "tech": "Figma, Adobe XD, JavaScript, React, CSS, SASS, Node.js"
+      },
+      {
+        "role": "UI Developer",
+        "company": "Garbarino",
+        "period": "Feb 2017 – Apr 2018",
+        "bullets": [
+          "Refactored and modernized the company's CSS library, improving UI consistency and enabling faster deployment.",
+          "Collaborated with development teams to streamline frontend workflows and reduce time spent on UI updates."
+        ],
+        "tech": "JavaScript, SCSS, Sass, CSS, React, PWA, Node.js"
+      },
+      {
+        "role": "UI Developer",
+        "company": "Avenida.com",
+        "period": "Feb 2015 – Sept 2016",
+        "bullets": [
+          "Contributed to the initial product launch, building the product's style library and foundational UI structure."
+        ],
+        "tech": "SCSS, Sass, CSS, PostCSS, Bootstrap"
+      }
+    ],
+    "educationData": {
+      "degree": "Graphic Designer",
+      "institution": "Universidad de Buenos Aires",
+      "period": "2000 – 2009"
+    },
+    "languagesData": [
+      { "name": "English", "level": "Advanced" },
+      { "name": "Portuguese", "level": "Intermediate" }
+    ],
+    "skills": ["UI Architecture", "Design Systems", "React", "TypeScript", "Figma", "Accessibility", "Micro-interactions", "React Native"]
+  },
+  "contact": {
+    "label": "Get In Touch",
+    "heading": "Let's build something together.",
+    "copyright": "© {year} Esteban Calvi. All rights reserved.",
+    "location": "Buenos Aires, Argentina"
+  },
+  "about": {
+    "backLink": "← Back home",
+    "label": "About",
+    "heading1": "My name is",
+    "heading2": "Esteban Calvi",
+    "paragraphs": [
+      "I'm a Sr. Product Designer and UX Engineer with 10+ years of experience building scalable digital products.",
+      "Background in Graphic Design (University of Buenos Aires) with deep expertise in UI architecture, design systems, and frontend development.",
+      "Specialized in fintech and enterprise environments, working across design and engineering to deliver robust, accessible, and visually refined interfaces. Strong focus on component libraries, animated micro-interactions, and developer-friendly UI systems. Experienced collaborating with cross-functional teams and leveraging modern tooling, including AI-assisted development workflows.",
+      "In parallel to my engineering work, I'm an active and published comic book artist. This background informs my approach to visual composition, storytelling, and detail-oriented UI design."
+    ]
+  },
+  "caseStudyPage": {
+    "backLink": "← Back to case studies"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "link": "Return to Home"
+  }
+}
