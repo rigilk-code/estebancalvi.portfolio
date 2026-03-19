@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import portrait from "@/assets/esteban-portrait.png";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t, localePath } = useLanguage();
+
   return (
     <section id="home" className="min-h-screen pt-20 relative overflow-hidden">
       {/* Red sidebar — hidden on mobile */}
@@ -29,21 +32,19 @@ const HeroSection = () => {
 
         {/* Typographic play */}
         <ScrollReveal className="max-w-2xl" delay={0.15}>
-          <p className="text-label-large text-accent mb-4">About me</p>
+          <p className="text-label-large text-accent mb-4">{t.hero.label}</p>
           <h1 className="text-display-medium md:text-display-large mb-8 leading-tight">
-            My name is <br /><span className="text-accent">Esteban Calvi</span>,
+            {t.hero.heading1} <br /><span className="text-accent">{t.hero.heading2}</span>,
           </h1>
           <div className="w-24 h-[3px] bg-foreground mb-8" />
           <div className="space-y-4 text-body-large leading-relaxed">
-            <p>
-              Sr. Product Designer and UX Engineer with 10+ years of experience building scalable digital products.
-            </p>
+            <p>{t.hero.description}</p>
           </div>
           <Link
-            to="/about"
+            to={localePath("/about")}
             className="inline-block mt-6 border-2 border-foreground bg-accent text-accent-foreground px-6 py-3 text-label-large hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:scale-[1.02] focus:scale-[1.02] transition-all duration-200"
           >
-            Read full presentation letter →
+            {t.hero.cta}
           </Link>
         </ScrollReveal>
       </div>

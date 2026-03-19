@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "caseStudies": "Casos de Estudio",
+    "resume": "Currículum",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "label": "Sobre mí",
+    "heading1": "Mi nombre es",
+    "heading2": "Esteban Calvi",
+    "description": "Sr. Product Designer e Ingeniero UX con más de 10 años de experiencia construyendo productos digitales escalables.",
+    "cta": "Leer carta de presentación completa →"
+  },
+  "caseStudies": {
+    "sectionTitle": "Casos de Estudio"
+  },
+  "cases": [
+    {
+      "slug": "wenance-design-system",
+      "title": "Wenance: Misma Empresa, Múltiples Marcas",
+      "category": "Sistemas de Diseño",
+      "description": "Construí un sistema de diseño modular que permitió lanzamientos rápidos de MVPs bajo diferentes marcas para una empresa fintech con múltiples líneas de producto.",
+      "tags": ["Sistemas de Diseño", "React", "Tematización", "Multi-marca"],
+      "body": [
+        { "type": "heading", "text": "El Desafío: Lanzamiento Rápido de MVP" },
+        { "type": "paragraph", "text": "Wenance se propuso construir una gran suite de productos financieros desde cero. La primera app de préstamos debía estar lista en menos de dos semanas. Además, la empresa necesitaba la capacidad de cambiar de marca rápidamente — transformando a digital lo que antes se hacía de forma analógica." },
+        { "type": "callout", "text": "El lanzamiento del primer MVP fue exitoso, y volvimos a trabajar en el resto de la suite de productos financieros. Pero sabíamos que necesitábamos un enfoque más escalable.", "variant": "success" },
+        { "type": "heading", "text": "Fase 1: El Objeto de Marca" },
+        { "type": "paragraph", "text": "Nuestra primera solución fue un conjunto de valores fijos — logo, tipografía y una paleta limitada — que nos permitían crear un MVP rápido para una nueva marca en cuestión de horas. Resolvió las expectativas de entrega, pero a un costo: la UI corría el riesgo de sentirse rígida y monótona." },
+        { "type": "heading", "text": "Ganando Flexibilidad: La Capa de Tema" },
+        { "type": "paragraph", "text": "Para abordar la rigidez, introdujimos una capa intermedia: el Tema de Marca. Este se ubicaba entre el Objeto de Marca (constantes básicas) y el Producto (la aplicación final), permitiéndonos hacer variaciones en cómo los valores visuales se asignaban y distribuían en la app." },
+        { "type": "list", "items": ["Objeto de Marca — almacena constantes básicas de marca: logo, tipografía, paleta limitada.", "Tema de Marca — introduce variaciones en cómo esos valores se distribuyen en la UI.", "Producto — recibe y renderiza las definiciones visuales finales."] },
+        { "type": "paragraph", "text": "Esta arquitectura de tres capas abrió la puerta a patrones más complejos y visualmente interesantes, manteniendo la velocidad de creación de marcas." },
+        { "type": "heading", "text": "Ejemplos de Marca" },
+        { "type": "paragraph", "text": "Welp era el producto estrella de la empresa, dirigido a un demográfico de ingresos altos. Su tema se inclinaba hacia una estética más premium y pulida. Mango, por otro lado, apuntaba a una audiencia de ingresos medios con un feeling tropical y accesible — mismo sistema, personalidad completamente diferente." },
+        { "type": "heading", "text": "Escalando Más" },
+        { "type": "paragraph", "text": "Procedimos a abstraer las responsabilidades de UI en repositorios separados: Atributos de Marca (objeto de marca + tema), una Librería de UI compartida (bloques de construcción que funcionaban en conjunto con los atributos de marca), y los Productos como consumidores de ambos." },
+        { "type": "callout", "text": "La evolución final: construimos un CRM de Creación de Marcas que permitía al personal no técnico — como marketing — crear MVPs para nuevas marcas ensamblando sus propios objetos de marca. El personal técnico los refinaría después según fuera necesario.", "variant": "info" },
+        { "type": "divider" },
+        { "type": "cta", "text": "Ver la presentación completa →", "href": "https://docs.google.com/presentation/d/10a8UjC9g4OHefRCbkInq8jvuZ5YHjJfdqCw5oNRfh0I/edit?usp=sharing" }
+      ]
+    },
+    {
+      "slug": "duollar-crypto-platform",
+      "title": "Duollar: Decisiones Rápidas para Máximo Impacto",
+      "category": "Diseño de Producto",
+      "description": "Diseñé la identidad visual y la UI para una plataforma de trading crypto con restricciones presupuestarias ajustadas — cada decisión de diseño tenía que contar.",
+      "tags": ["Diseño UI", "Branding", "Crypto", "Figma"],
+      "body": [
+        { "type": "heading", "text": "Contexto: Restricciones Presupuestarias" },
+        { "type": "paragraph", "text": "En 2021, Duollar pretendía ser una plataforma de trading spot entre monedas fiat y activos digitales, adaptada al mercado financiero argentino. Ser una plataforma financiera significaba que el backend debía ser robusto y seguro — y la mayor parte del presupuesto fue allí. El diseño visual debía hacerse en una ventana muy limitada, sentando bases que el equipo de desarrollo pudiera evolucionar por su cuenta." },
+        { "type": "callout", "text": "Podíamos tomar muy pocas decisiones. Teníamos que asegurarnos de que cada una contara.", "variant": "warning" },
+        { "type": "heading", "text": "Decisión 1: Tipografía" },
+        { "type": "paragraph", "text": "Elegimos Arvo Bold de Anton Koovit como fuente de encabezados — una alternativa a Rockwell (1934), una serif slab pensada para dar a los textos una voz audaz y distintiva. Se complementó con Montserrat de Julieta Ulanovsky para el cuerpo, equilibrando personalidad con legibilidad." },
+        { "type": "heading", "text": "Decisión 2: Paleta de Color" },
+        { "type": "paragraph", "text": "Los números son fríos. Un montón de números juntos se sienten aún más fríos. Usamos la paleta de colores como contrapeso — haciendo que la plataforma se sintiera más cálida y accesible. Como el proyecto no tenía branding definido cuando nos sumamos, esta paleta terminó convirtiéndose en la identidad de marca." },
+        { "type": "heading", "text": "Decisión 3: Iconografía" },
+        { "type": "paragraph", "text": "Los íconos pueden hacer que una interfaz cargada de números se sienta más liviana. Los íconos personalizados estaban fuera de presupuesto, y usar una familia ubicua como Material Icons arriesgaba diluir la identidad de marca. Encontramos un set limitado pero original de íconos financieros que logró el balance correcto." },
+        { "type": "heading", "text": "Decisión 4: Procesamiento de Imagen" },
+        { "type": "paragraph", "text": "Como estaríamos en el proyecto por tiempo limitado, desarrollamos un algoritmo simple de procesamiento de imagen que permitía a los desarrolladores generar visuales alineados a la marca de forma autónoma — asegurando que la consistencia visual sobreviviera nuestra partida." },
+        { "type": "heading", "text": "Decisión 5: Interfaz Conversacional" },
+        { "type": "paragraph", "text": "Todo se siente más fácil cuando parece que estás hablando con una persona real — especialmente cuando se trata de números duros. Una verdadera interfaz conversacional estaba fuera de alcance, pero diseñamos la UI para imitar esa sensación. Esto fue en 2021, mucho antes de que ChatGPT popularizara las UIs conversacionales." },
+        { "type": "callout", "text": "Con estas cinco decisiones definidas, creamos un set completo de pantallas template — landings, formularios, vistas móviles, calls to action y un sistema tipográfico — dándole al equipo de desarrollo todo lo necesario para seguir construyendo.", "variant": "success" },
+        { "type": "divider" },
+        { "type": "cta", "text": "Ver la presentación completa →", "href": "https://docs.google.com/presentation/d/1bbAobDY-hjwaYA-gYO6ZR7dOulbqChINylosvDPbMoY/edit?usp=sharing" }
+      ]
+    }
+  ],
+  "resume": {
+    "sectionTitle": "Currículum",
+    "workExperience": "Experiencia Laboral",
+    "education": "Educación",
+    "languages": "Idiomas",
+    "coreSkills": "Habilidades Principales",
+    "downloadResume": "Descargar currículum completo (PDF) →",
+    "experience": [
+      {
+        "role": "UI Developer",
+        "company": "RecargaPay (Brasil)",
+        "period": "Jul 2019 – Nov 2025",
+        "bullets": [
+          "Lideré el diseño e implementación de una librería de componentes UI usada en múltiples productos core, incluyendo la app móvil.",
+          "Colaboré estrechamente con equipos de producto, diseño e ingeniería para estandarizar patrones de interacción y mejorar la velocidad de desarrollo.",
+          "Contribuí a una arquitectura frontend escalable soportando plataformas React y React Native."
+        ],
+        "tech": "TypeScript, React, React Native, Node.js, Android, iOS"
+      },
+      {
+        "role": "UX Lead / Frontend Developer",
+        "company": "Wenance",
+        "period": "Abr 2018 – Jun 2019",
+        "bullets": [
+          "Desarrollé y mantuve features frontend para productos financieros en un entorno fintech de ritmo rápido.",
+          "Trabajé estrechamente con diseñadores para traducir definiciones UX en implementaciones UI escalables."
+        ],
+        "tech": "Figma, Adobe XD, JavaScript, React, CSS, SASS, Node.js"
+      },
+      {
+        "role": "UI Developer",
+        "company": "Garbarino",
+        "period": "Feb 2017 – Abr 2018",
+        "bullets": [
+          "Refactoricé y modernicé la librería CSS de la empresa, mejorando la consistencia UI y habilitando despliegues más rápidos.",
+          "Colaboré con equipos de desarrollo para optimizar flujos de trabajo frontend y reducir el tiempo en actualizaciones de UI."
+        ],
+        "tech": "JavaScript, SCSS, Sass, CSS, React, PWA, Node.js"
+      },
+      {
+        "role": "UI Developer",
+        "company": "Avenida.com",
+        "period": "Feb 2015 – Sept 2016",
+        "bullets": [
+          "Contribuí al lanzamiento inicial del producto, construyendo la librería de estilos y la estructura UI fundacional."
+        ],
+        "tech": "SCSS, Sass, CSS, PostCSS, Bootstrap"
+      }
+    ],
+    "educationData": {
+      "degree": "Diseñador Gráfico",
+      "institution": "Universidad de Buenos Aires",
+      "period": "2000 – 2009"
+    },
+    "languagesData": [
+      { "name": "Inglés", "level": "Avanzado" },
+      { "name": "Portugués", "level": "Intermedio" }
+    ],
+    "skills": ["Arquitectura UI", "Sistemas de Diseño", "React", "TypeScript", "Figma", "Accesibilidad", "Micro-interacciones", "React Native"]
+  },
+  "contact": {
+    "label": "Contacto",
+    "heading": "Construyamos algo juntos.",
+    "copyright": "© {year} Esteban Calvi. Todos los derechos reservados.",
+    "location": "Buenos Aires, Argentina"
+  },
+  "about": {
+    "backLink": "← Volver al inicio",
+    "label": "Sobre mí",
+    "heading1": "Mi nombre es",
+    "heading2": "Esteban Calvi",
+    "paragraphs": [
+      "Soy Sr. Product Designer e Ingeniero UX con más de 10 años de experiencia construyendo productos digitales escalables.",
+      "Formación en Diseño Gráfico (Universidad de Buenos Aires) con profunda experiencia en arquitectura UI, sistemas de diseño y desarrollo frontend.",
+      "Especializado en entornos fintech y enterprise, trabajando entre diseño e ingeniería para entregar interfaces robustas, accesibles y visualmente refinadas. Fuerte enfoque en librerías de componentes, micro-interacciones animadas y sistemas UI amigables para desarrolladores. Experiencia colaborando con equipos multifuncionales y aprovechando herramientas modernas, incluyendo flujos de desarrollo asistidos por IA.",
+      "En paralelo a mi trabajo de ingeniería, soy artista de cómic activo y publicado. Esta formación informa mi enfoque hacia la composición visual, la narrativa y el diseño UI orientado al detalle."
+    ]
+  },
+  "caseStudyPage": {
+    "backLink": "← Volver a casos de estudio"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "¡Ups! Página no encontrada",
+    "link": "Volver al inicio"
+  }
+}
