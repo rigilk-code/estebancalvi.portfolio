@@ -1,4 +1,4 @@
-# Portfolio (built with Lovable)
+# Personal portfolio
 
 This is my personal portfolio project, designed and developed to showcase my work and experience as a frontend engineer and UX engineer.
 
