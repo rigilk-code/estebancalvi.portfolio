@@ -1,18 +1,18 @@
 # Personal portfolio
 
-This is my personal portfolio project, designed and developed to showcase my work and experience as a frontend engineer and UX engineer.
+This is my profile. It is designed to showcase my work and experience as a frontend developer and UX engineer.
 
 ## 🚀 Overview
 
-This portfolio was created using **Lovable** and GitHub pages.
+This portfolio was created using **Lovable** and **GitHub pages**.
 
 ## 🛠 Tech Stack
 
 - **Lovable** — UI development and component system  
 - **React**
 - **Vite**
-- **TypeScript (if applicable)**  
-- **CSS / Styling solution (e.g. Tailwind, Styled Components)**
+- **TypeScript**  
+- **Tailwind**
 - **GitHub pages**
 
 ## 🧪 Getting Started
