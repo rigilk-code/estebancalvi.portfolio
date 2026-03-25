@@ -22,7 +22,7 @@ const Header = () => {
   }, []);
 
   const handleNavClick = (hash: string) => {
-    window.location.hash = `/#${hash}`;
+    window.location.hash = lang === "es" ? `/es#${hash}` : `/#${hash}`;
     setOpen(false);
   };
 
