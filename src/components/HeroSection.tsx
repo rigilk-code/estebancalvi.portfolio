@@ -1,26 +1,12 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
 import portrait from "@/assets/esteban-portrait.png";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useParallax } from "@/hooks/use-parallax";
 
 const HeroSection = () => {
   const { t, localePath } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        if (rect.bottom > 0) {
-          setScrollY(window.scrollY);
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { ref, offset } = useParallax();
 
   return (
     <section
