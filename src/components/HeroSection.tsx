@@ -1,30 +1,16 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
 import portrait from "@/assets/esteban-portrait.png";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useParallax } from "@/hooks/use-parallax";
 
 const HeroSection = () => {
   const { t, localePath } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        if (rect.bottom > 0) {
-          setScrollY(window.scrollY);
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { ref, offset } = useParallax();
 
   return (
     <section
-      ref={sectionRef}
+      ref={ref}
       id="home"
       className="min-h-screen pt-20 relative overflow-hidden"
       style={{ backgroundColor: "#bceeb5" }}
@@ -35,23 +21,23 @@ const HeroSection = () => {
       {/* Geometric miscellanies — hidden on mobile, parallax */}
       <div
         className="absolute top-32 right-12 w-16 h-16 bg-foreground hidden md:block"
-        style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+        style={{ transform: `translateY(${offset * 0.15}px)` }}
       />
       <div
         className="absolute bottom-24 right-1/4 w-8 h-8 bg-accent hidden md:block"
-        style={{ transform: `translateY(${scrollY * -0.1}px)` }}
+        style={{ transform: `translateY(${offset * -0.1}px)` }}
       />
       <div
         className="absolute top-1/2 right-8 w-[2px] h-32 bg-foreground hidden md:block"
-        style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+        style={{ transform: `translateY(${offset * 0.2}px)` }}
       />
       <div
         className="absolute bottom-48 left-40 w-12 h-[2px] bg-foreground hidden lg:block"
-        style={{ transform: `translateY(${scrollY * -0.12}px)` }}
+        style={{ transform: `translateY(${offset * -0.12}px)` }}
       />
       <div
         className="absolute top-40 left-40 w-6 h-6 bg-accent hidden lg:block"
-        style={{ transform: `translateY(${scrollY * 0.18}px)` }}
+        style={{ transform: `translateY(${offset * 0.18}px)` }}
       />
 
       <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:px-40 py-16 lg:py-24">

@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useParallax } from "@/hooks/use-parallax";
 
 const CaseStudies = () => {
   const { t, localePath } = useLanguage();
   const studies = t.cases;
+  const { ref, offset } = useParallax();
 
   return (
-    <section id="cases" className="py-24 px-6 md:px-16 lg:px-40 relative">
-      <div className="absolute top-12 right-16 w-10 h-10 bg-foreground hidden md:block" />
-      <div className="absolute bottom-12 left-16 w-6 h-6 bg-accent hidden md:block" />
+    <section ref={ref} id="cases" className="py-24 px-6 md:px-16 lg:px-40 relative overflow-hidden">
+      <div className="absolute top-12 right-16 w-10 h-10 bg-foreground hidden md:block" style={{ transform: `translateY(${offset * 0.15}px)` }} />
+      <div className="absolute bottom-12 left-16 w-6 h-6 bg-accent hidden md:block" style={{ transform: `translateY(${offset * -0.1}px)` }} />
 
       <ScrollReveal>
         <h2 className="text-display-medium md:text-display-large mb-16">{t.caseStudies.sectionTitle}</h2>

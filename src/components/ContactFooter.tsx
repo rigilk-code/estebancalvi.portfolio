@@ -1,14 +1,16 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useParallax } from "@/hooks/use-parallax";
 
 const ContactFooter = () => {
   const { t } = useLanguage();
   const c = t.contact;
+  const { ref, offset } = useParallax();
 
   return (
-    <footer id="contact" className="bg-accent text-accent-foreground py-20 px-8 md:px-16 lg:px-40 relative overflow-hidden">
+    <footer ref={ref} id="contact" className="bg-accent text-accent-foreground py-20 px-8 md:px-16 lg:px-40 relative overflow-hidden">
       {/* Geometric miscellanies */}
-      <div className="absolute top-8 right-12 w-10 h-10 border-2 border-accent-foreground hidden md:block" />
-      <div className="absolute bottom-12 left-1/3 w-16 h-[2px] bg-accent-foreground hidden md:block" />
+      <div className="absolute top-8 right-12 w-10 h-10 border-2 border-accent-foreground hidden md:block" style={{ transform: `translateY(${offset * 0.18}px)` }} />
+      <div className="absolute bottom-12 left-1/3 w-16 h-[2px] bg-accent-foreground hidden md:block" style={{ transform: `translateY(${offset * -0.1}px)` }} />
 
       <div className="relative z-10 max-w-3xl">
         <p className="text-label-large text-accent-foreground/70 mb-2">
