@@ -78,6 +78,14 @@
 
 /* Material Design Type Scale adapted */
 @layer utilities {
+  .text-display-xlarge {
+    font-family: var(--font-heading);
+    font-size: 5.6rem;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+  }
+
   .text-display-large {
     font-family: var(--font-heading);
     font-size: 3.5625rem;

@@ -20,24 +20,24 @@ const HeroSection = () => {
 
       {/* Geometric miscellanies — hidden on mobile, parallax */}
       <div
-        className="absolute top-32 right-12 w-16 h-16 bg-foreground hidden md:block"
-        style={{ transform: `translateY(${offset * 0.15}px)` }}
+        className="absolute top-32 right-12 w-16 h-16 bg-muted-foreground hidden md:block"
+        style={{ transform: `translateY(${offset * 0.25}px)` }}
       />
       <div
         className="absolute bottom-24 right-1/4 w-8 h-8 bg-accent hidden md:block"
-        style={{ transform: `translateY(${offset * -0.1}px)` }}
+        style={{ transform: `translateY(${offset * -0.2}px)` }}
       />
       <div
         className="absolute top-1/2 right-8 w-[2px] h-32 bg-foreground hidden md:block"
-        style={{ transform: `translateY(${offset * 0.2}px)` }}
+        style={{ transform: `translateY(${offset * 0.4}px)` }}
       />
       <div
         className="absolute bottom-48 left-40 w-12 h-[2px] bg-foreground hidden lg:block"
-        style={{ transform: `translateY(${offset * -0.12}px)` }}
+        style={{ transform: `translateY(${offset * -0.25}px)` }}
       />
       <div
         className="absolute top-40 left-40 w-6 h-6 bg-accent hidden lg:block"
-        style={{ transform: `translateY(${offset * 0.18}px)` }}
+        style={{ transform: `translateY(${offset * 0.36}px)` }}
       />
 
       <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:px-40 py-16 lg:py-24">
@@ -55,7 +55,7 @@ const HeroSection = () => {
         {/* Typographic play */}
         <ScrollReveal className="max-w-2xl" delay={0.15}>
           <p className="text-label-large text-accent mb-4">{t.hero.label}</p>
-          <h1 className="text-display-medium md:text-display-large mb-8 leading-tight">
+          <h1 className="text-display-large md:text-display-xlarge mb-8 leading-tight">
             {t.hero.heading1} <br /><span className="text-accent">{t.hero.heading2}</span>,
           </h1>
           <div className="w-24 h-[3px] bg-foreground mb-8" />
