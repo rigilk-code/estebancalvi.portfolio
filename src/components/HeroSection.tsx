@@ -21,19 +21,19 @@ const HeroSection = () => {
       {/* Geometric miscellanies — hidden on mobile, parallax */}
       <div
         className="absolute top-32 right-12 w-16 h-16 bg-foreground hidden md:block"
-        style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+        style={{ transform: `translateY(${offset * 0.15}px)` }}
       />
       <div
         className="absolute bottom-24 right-1/4 w-8 h-8 bg-accent hidden md:block"
-        style={{ transform: `translateY(${scrollY * -0.1}px)` }}
+        style={{ transform: `translateY(${offset * -0.1}px)` }}
       />
       <div
         className="absolute top-1/2 right-8 w-[2px] h-32 bg-foreground hidden md:block"
-        style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+        style={{ transform: `translateY(${offset * 0.2}px)` }}
       />
       <div
         className="absolute bottom-48 left-40 w-12 h-[2px] bg-foreground hidden lg:block"
-        style={{ transform: `translateY(${scrollY * -0.12}px)` }}
+        style={{ transform: `translateY(${offset * -0.12}px)` }}
       />
       <div
         className="absolute top-40 left-40 w-6 h-6 bg-accent hidden lg:block"
