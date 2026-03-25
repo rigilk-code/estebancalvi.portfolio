@@ -37,7 +37,7 @@ const HeroSection = () => {
       />
       <div
         className="absolute top-40 left-40 w-6 h-6 bg-accent hidden lg:block"
-        style={{ transform: `translateY(${scrollY * 0.18}px)` }}
+        style={{ transform: `translateY(${offset * 0.18}px)` }}
       />
 
       <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:px-40 py-16 lg:py-24">
