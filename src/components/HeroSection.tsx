@@ -10,7 +10,7 @@ const HeroSection = () => {
 
   return (
     <section
-      ref={sectionRef}
+      ref={ref}
       id="home"
       className="min-h-screen pt-20 relative overflow-hidden"
       style={{ backgroundColor: "#bceeb5" }}
