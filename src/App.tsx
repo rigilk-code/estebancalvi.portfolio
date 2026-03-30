@@ -11,27 +11,23 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
-const LocalizedRoutes = () => (
-  <LanguageProvider>
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/case/:slug" element={<CaseStudy />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  </LanguageProvider>
-);
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <HashRouter>
-        <Routes>
-          <Route path="/es/*" element={<LocalizedRoutes />} />
-          <Route path="/*" element={<LocalizedRoutes />} />
-        </Routes>
+        <LanguageProvider>
+          <Routes>
+            <Route path="/es/" element={<Index />} />
+            <Route path="/es/about" element={<About />} />
+            <Route path="/es/case/:slug" element={<CaseStudy />} />
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/case/:slug" element={<CaseStudy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </LanguageProvider>
       </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
