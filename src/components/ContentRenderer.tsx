@@ -1,5 +1,5 @@
 import { ContentBlock } from "@/data/caseStudies";
-import { imageGroups } from "@/data/caseImages";
+import { images } from "@/data/caseImages";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const calloutStyles: Record<string, string> = {
@@ -9,8 +9,8 @@ const calloutStyles: Record<string, string> = {
 };
 
 function resolveBlocks(blocks: ContentBlock[]): ContentBlock[] {
-  return blocks.flatMap((block) =>
-    block.type === "imageGroup" ? (imageGroups[block.id] ?? []) : [block]
+  return blocks.map((block) =>
+    block.type === "imageRef" ? (images[block.id] ?? block) : block
   );
 }
 
