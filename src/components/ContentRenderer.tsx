@@ -1,5 +1,5 @@
 import { ContentBlock } from "@/data/caseStudies";
-import { imageGroups } from "@/data/caseImages";
+import { images } from "@/data/caseImages";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const calloutStyles: Record<string, string> = {
