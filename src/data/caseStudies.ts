@@ -78,8 +78,6 @@ export const caseStudies: CaseStudy[] = [
         type: "paragraph",
         text: "Welp was the company's flagship product, targeting a higher-income demographic. Its theme leaned into a more premium, polished aesthetic. Mango, on the other hand, targeted a medium-income audience with a tropical, approachable feel — same system, completely different personality.",
       },
-      {
-        type: "heading",
         text: "Scaling Further",
       },
       {
