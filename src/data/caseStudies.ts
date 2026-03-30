@@ -2,7 +2,7 @@ export type ContentBlock =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
   | { type: "image"; src: string; alt: string; caption?: string }
-  | { type: "imageGroup"; id: string }
+  | { type: "imageRef"; id: string }
   | { type: "code"; language: string; code: string }
   | { type: "callout"; text: string; variant?: "info" | "success" | "warning" }
   | { type: "list"; items: string[]; ordered?: boolean }

@@ -9,8 +9,8 @@ const calloutStyles: Record<string, string> = {
 };
 
 function resolveBlocks(blocks: ContentBlock[]): ContentBlock[] {
-  return blocks.flatMap((block) =>
-    block.type === "imageGroup" ? (imageGroups[block.id] ?? []) : [block]
+  return blocks.map((block) =>
+    block.type === "imageRef" ? (images[block.id] ?? block) : block
   );
 }
 
