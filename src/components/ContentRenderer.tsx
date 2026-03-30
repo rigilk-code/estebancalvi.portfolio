@@ -1,4 +1,5 @@
 import { ContentBlock } from "@/data/caseStudies";
+import { imageGroups } from "@/data/caseImages";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const calloutStyles: Record<string, string> = {
@@ -7,10 +8,17 @@ const calloutStyles: Record<string, string> = {
   warning: "border-foreground bg-background",
 };
 
+function resolveBlocks(blocks: ContentBlock[]): ContentBlock[] {
+  return blocks.flatMap((block) =>
+    block.type === "imageGroup" ? (imageGroups[block.id] ?? []) : [block]
+  );
+}
+
 const ContentRenderer = ({ blocks }: { blocks: ContentBlock[] }) => {
+  const resolved = resolveBlocks(blocks);
   return (
     <div className="space-y-6">
-      {blocks.map((block, i) => (
+      {resolved.map((block, i) => (
         <ScrollReveal key={i} delay={0.1 + i * 0.04}>
           {renderBlock(block)}
         </ScrollReveal>
