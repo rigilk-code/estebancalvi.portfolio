@@ -41,51 +41,39 @@ const HeroSection = () => {
       />
 
       {/* Circle stripe — horizontal on mobile/tablet, vertical on desktop */}
-      <div className="relative z-10 w-full lg:absolute lg:left-8 lg:top-0 lg:bottom-0 lg:w-80 flex flex-row lg:flex-col items-center justify-center py-4 lg:py-0">
-        {(() => {
-          const colors = ["#F71735", "#FB5B28", "#FF9F1C", "#F6D21E"];
-          const circleSize = "clamp(7rem, 22vw, 10rem)";
-          const lgSize = "11rem";
-          const overlap = 0.55; // fraction of circle that overlaps
-
-          return (
-            <>
-              {colors.map((color, i) => (
-                <div
-                  key={i}
-                  className="rounded-full border-4 border-foreground flex-shrink-0"
-                  style={{
-                    width: circleSize,
-                    height: circleSize,
-                    backgroundColor: color,
-                    zIndex: i,
-                    marginRight: `calc(${circleSize} * -${overlap})`,
-                    marginBottom: 0,
-                  }}
-                />
-              ))}
-              {/* Portrait on top */}
-              <div
-                className="rounded-full overflow-hidden border-4 border-foreground flex-shrink-0"
-                style={{
-                  width: circleSize,
-                  height: circleSize,
-                  zIndex: colors.length,
-                }}
-              >
-                <img
-                  src={portrait}
-                  alt="Esteban Calvi"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </>
-          );
-        })()}
+      <style>{`
+        .circle-stripe { display: flex; align-items: center; justify-content: center; }
+        .circle-stripe .circle-item { flex-shrink: 0; border-radius: 9999px; border: 4px solid hsl(var(--foreground)); }
+        /* Mobile/tablet: horizontal */
+        @media (max-width: 1023px) {
+          .circle-stripe { flex-direction: row; width: 100%; padding: 1.5rem 0; }
+          .circle-stripe .circle-item { width: clamp(6rem, 20vw, 9rem); height: clamp(6rem, 20vw, 9rem); margin-right: clamp(-3.5rem, -11vw, -5rem); }
+          .circle-stripe .circle-item:last-child { margin-right: 0; }
+        }
+        /* Desktop: vertical, full height, bottom to top */
+        @media (min-width: 1024px) {
+          .circle-stripe { flex-direction: column-reverse; position: absolute; left: 2rem; top: 0; bottom: 0; width: 12rem; }
+          .circle-stripe .circle-item { width: 11rem; height: 11rem; margin-bottom: -4rem; }
+          .circle-stripe .circle-item:first-child { margin-bottom: 0; }
+        }
+      `}</style>
+      <div className="circle-stripe relative z-10">
+        {["#F71735", "#FB5B28", "#FF9F1C", "#F6D21E"].map((color, i) => (
+          <div
+            key={i}
+            className="circle-item"
+            style={{ backgroundColor: color, zIndex: i }}
+          />
+        ))}
+        <div
+          className="circle-item overflow-hidden"
+          style={{ zIndex: 4 }}
+        >
+          <img src={portrait} alt="Esteban Calvi" className="w-full h-full object-cover" />
+        </div>
       </div>
 
-      {/* Desktop: offset content to the right of the circle stripe */}
-      <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:pl-[22rem] lg:pr-40 py-4 lg:py-24">
+      <div className="relative z-10 flex flex-col items-start gap-8 px-6 md:px-16 lg:pl-[16rem] lg:pr-40 py-4 lg:py-24">
 
         {/* Typographic play */}
         <ScrollReveal className="max-w-2xl" delay={0.15}>
