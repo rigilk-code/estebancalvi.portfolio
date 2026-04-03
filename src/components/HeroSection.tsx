@@ -40,17 +40,40 @@ const HeroSection = () => {
         style={{ transform: `translateY(${offset * 0.36}px)` }}
       />
 
-      <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:px-40 py-16 lg:py-24">
-        {/* Portrait */}
-        <ScrollReveal className="flex-shrink-0 md:ml-8 lg:ml-0">
-          <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--accent))]">
-            <img
-              src={portrait}
-              alt="Esteban Calvi"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </ScrollReveal>
+      {/* Circle stripe — horizontal on mobile/tablet, vertical on desktop */}
+      <style>{`
+        .circle-stripe { display: flex; align-items: center; justify-content: center; }
+        .circle-stripe .circle-item { flex-shrink: 0; border-radius: 9999px; border: 4px solid hsl(var(--foreground)); }
+        /* Mobile/tablet: horizontal */
+        @media (max-width: 1023px) {
+          .circle-stripe { flex-direction: row; width: 100%; padding: 1.5rem 0; }
+          .circle-stripe .circle-item { width: clamp(6rem, 20vw, 9rem); height: clamp(6rem, 20vw, 9rem); margin-right: clamp(-3.5rem, -11vw, -5rem); }
+          .circle-stripe .circle-item:last-child { margin-right: 0; }
+        }
+        /* Desktop: vertical, full height, bottom to top */
+        @media (min-width: 1024px) {
+          .circle-stripe { flex-direction: column-reverse; position: absolute; left: 2rem; top: 0; bottom: 0; width: 12rem; }
+          .circle-stripe .circle-item { width: 11rem; height: 11rem; margin-bottom: -4rem; }
+          .circle-stripe .circle-item:first-child { margin-bottom: 0; }
+        }
+      `}</style>
+      <div className="circle-stripe relative z-10">
+        {["#F71735", "#FB5B28", "#FF9F1C", "#F6D21E"].map((color, i) => (
+          <div
+            key={i}
+            className="circle-item"
+            style={{ backgroundColor: color, zIndex: i }}
+          />
+        ))}
+        <div
+          className="circle-item overflow-hidden"
+          style={{ zIndex: 4 }}
+        >
+          <img src={portrait} alt="Esteban Calvi" className="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <div className="relative z-10 flex flex-col items-start gap-8 px-6 md:px-16 lg:pl-[16rem] lg:pr-40 py-4 lg:py-24">
 
         {/* Typographic play */}
         <ScrollReveal className="max-w-2xl" delay={0.15}>
