@@ -40,41 +40,52 @@ const HeroSection = () => {
         style={{ transform: `translateY(${offset * 0.36}px)` }}
       />
 
-      <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:px-40 py-16 lg:py-24">
-        {/* Portrait with circle stripe */}
-        <ScrollReveal className="flex-shrink-0 md:ml-8 lg:ml-0">
-          <div className="relative flex flex-row lg:flex-col items-center justify-center w-full lg:w-80 lg:h-screen">
-            {/* Decorative circles */}
-            {[
-              "#F71735",
-              "#FB5B28",
-              "#FF9F1C",
-              "#F6D21E",
-            ].map((color, i) => (
+      {/* Circle stripe — horizontal on mobile/tablet, vertical on desktop */}
+      <div className="relative z-10 w-full lg:absolute lg:left-8 lg:top-0 lg:bottom-0 lg:w-80 flex flex-row lg:flex-col items-center justify-center py-4 lg:py-0">
+        {(() => {
+          const colors = ["#F71735", "#FB5B28", "#FF9F1C", "#F6D21E"];
+          const circleSize = "clamp(7rem, 22vw, 10rem)";
+          const lgSize = "11rem";
+          const overlap = 0.55; // fraction of circle that overlaps
+
+          return (
+            <>
+              {colors.map((color, i) => (
+                <div
+                  key={i}
+                  className="rounded-full border-4 border-foreground flex-shrink-0"
+                  style={{
+                    width: circleSize,
+                    height: circleSize,
+                    backgroundColor: color,
+                    zIndex: i,
+                    marginRight: `calc(${circleSize} * -${overlap})`,
+                    marginBottom: 0,
+                  }}
+                />
+              ))}
+              {/* Portrait on top */}
               <div
-                key={i}
-                className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full border-4 border-foreground flex-shrink-0
-                  -mr-20 md:-mr-24 lg:mr-0 lg:-mb-24"
+                className="rounded-full overflow-hidden border-4 border-foreground flex-shrink-0"
                 style={{
-                  backgroundColor: color,
-                  zIndex: i,
+                  width: circleSize,
+                  height: circleSize,
+                  zIndex: colors.length,
                 }}
-              />
-            ))}
-            {/* Portrait circle on top */}
-            <div
-              className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-foreground flex-shrink-0
-                -mr-20 md:-mr-24 lg:mr-0 lg:-mb-0"
-              style={{ zIndex: 4 }}
-            >
-              <img
-                src={portrait}
-                alt="Esteban Calvi"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </ScrollReveal>
+              >
+                <img
+                  src={portrait}
+                  alt="Esteban Calvi"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </>
+          );
+        })()}
+      </div>
+
+      {/* Desktop: offset content to the right of the circle stripe */}
+      <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:pl-[22rem] lg:pr-40 py-4 lg:py-24">
 
         {/* Typographic play */}
         <ScrollReveal className="max-w-2xl" delay={0.15}>
