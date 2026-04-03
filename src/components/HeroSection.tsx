@@ -43,22 +43,23 @@ const HeroSection = () => {
       {/* Circle stripe — horizontal on mobile/tablet, vertical on desktop */}
       <style>{`
         .circle-stripe { display: flex; align-items: center; justify-content: center; }
-        .circle-stripe .circle-item { flex-shrink: 0; border-radius: 9999px; border: 4px solid hsl(var(--foreground)); }
-        /* Mobile/tablet: horizontal */
+        .circle-stripe .circle-item { flex-shrink: 0; border-radius: 9999px; }
+        .circle-stripe .circle-portrait { border: 4px solid hsl(var(--foreground)); }
+        /* Mobile/tablet: horizontal, portrait on the left */
         @media (max-width: 1023px) {
-          .circle-stripe { flex-direction: row; width: 100%; padding: 1.5rem 0; }
-          .circle-stripe .circle-item { width: clamp(6rem, 20vw, 9rem); height: clamp(6rem, 20vw, 9rem); margin-right: clamp(-3.5rem, -11vw, -5rem); }
-          .circle-stripe .circle-item:last-child { margin-right: 0; }
+          .circle-stripe { flex-direction: row-reverse; width: 100%; padding: 1.5rem 0; justify-content: flex-end; padding-left: 1rem; }
+          .circle-stripe .circle-item { width: clamp(5.5rem, 18vw, 8rem); height: clamp(5.5rem, 18vw, 8rem); margin-left: clamp(-3rem, -10vw, -4.5rem); }
+          .circle-stripe .circle-item:last-child { margin-left: 0; }
         }
         /* Desktop: vertical, full height, bottom to top */
         @media (min-width: 1024px) {
-          .circle-stripe { flex-direction: column-reverse; position: absolute; left: 2rem; top: 0; bottom: 0; width: 12rem; }
-          .circle-stripe .circle-item { width: 11rem; height: 11rem; margin-bottom: -4rem; }
+          .circle-stripe { flex-direction: column-reverse; position: absolute; left: 2rem; top: 0; bottom: 0; width: 14rem; }
+          .circle-stripe .circle-item { width: 13rem; height: 13rem; margin-bottom: -5.5rem; }
           .circle-stripe .circle-item:first-child { margin-bottom: 0; }
         }
       `}</style>
       <div className="circle-stripe relative z-10">
-        {["#F71735", "#FB5B28", "#FF9F1C", "#F6D21E"].map((color, i) => (
+        {["#F6D21E", "#FF9F1C", "#FB5B28", "#F71735"].map((color, i) => (
           <div
             key={i}
             className="circle-item"
@@ -66,7 +67,7 @@ const HeroSection = () => {
           />
         ))}
         <div
-          className="circle-item overflow-hidden"
+          className="circle-item circle-portrait overflow-hidden"
           style={{ zIndex: 4 }}
         >
           <img src={portrait} alt="Esteban Calvi" className="w-full h-full object-cover" />
