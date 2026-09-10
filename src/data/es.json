@@ -94,8 +94,8 @@
     "education": "Educación",
     "languages": "Idiomas",
     "coreSkills": "Habilidades Principales",
-    "downloadResume": "Descargar currículum completo (PDF) →",
-    "downloadResumeLink": "/public/esteban.calvi.es.sm.pdf",
+    "downloadResume": "Ver currículum completo ↗",
+    "downloadResumeLink": "https://docs.google.com/document/d/1kOl-wC3wd4IsHKLvlJTY0zds_sh5-qhCEUaVBcCwwBY/edit?usp=sharing",
     "experience": [
       {
         "role": "UI Developer",
