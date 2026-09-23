@@ -4,6 +4,7 @@ import en from "@/data/en.json";
 import es from "@/data/es.json";
 import pt from "@/data/pt.json";
 import type { ContentBlock } from "@/data/caseStudies";
+import { buildAppHref } from "@/lib/router";
 
 export type Lang = "en" | "es" | "pt";
 
@@ -25,6 +26,7 @@ interface LanguageContextValue {
   t: Translations;
   switchLang: (lang: Lang) => void;
   localePath: (path: string) => string;
+  localeHref: (path: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -49,14 +51,16 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
 
   const switchLang = (newLang: Lang) => {
     const rest = location.pathname.replace(/^\/(en|es|pt)(?=\/|$)/, "");
-    navigate(`/${newLang}${rest}${location.hash}`);
+    const nextHash = location.hash && location.hash !== "" ? location.hash : "";
+    navigate({ pathname: `/${newLang}${rest}`, hash: nextHash });
   };
 
   const localePath = (path: string) => `/${lang}${path === "/" ? "" : path}`;
+  const localeHref = (path: string) => buildAppHref(localePath(path));
 
   const value = useMemo(
-    () => ({ lang, t, switchLang, localePath }),
-    [lang, location.pathname]
+    () => ({ lang, t, switchLang, localePath, localeHref }),
+    [lang, location.pathname, location.hash]
   );
 
   return (

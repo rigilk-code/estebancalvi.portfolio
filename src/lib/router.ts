@@ -20,3 +20,11 @@ export const getRouterBaseName = (url?: string) => {
 
   return `/${segments.slice(0, repoIndex + 1).join("/")}`;
 };
+
+export const buildAppHref = (path: string) => {
+  const normalizedPath = path === "/" ? "" : path;
+  const basePath = getRouterBaseName();
+  const route = normalizedPath.startsWith("/") ? normalizedPath : `/${normalizedPath}`;
+
+  return `${basePath}/#${route}`;
+};

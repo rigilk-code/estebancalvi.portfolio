@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { lang, t, switchLang, localePath } = useLanguage();
+  const { lang, t, switchLang, localeHref } = useLanguage();
   const navigate = useNavigate();
 
   const navItems = [
@@ -24,7 +24,7 @@ const Header = () => {
   }, []);
 
   const handleNavClick = (hash: string) => {
-    navigate(`/${lang}#${hash}`);
+    navigate({ pathname: `/${lang}`, hash: `#${hash}` });
     setOpen(false);
   };
 
@@ -34,7 +34,7 @@ const Header = () => {
         className="flex items-center justify-between px-6 md:px-12 transition-all duration-500 ease-out"
         style={{ paddingTop: scrolled ? '1rem' : '2.5rem', paddingBottom: scrolled ? '1rem' : '2.5rem' }}
       >
-        <a href={localePath("/")} className="flex items-center gap-2">
+        <a href={localeHref("/")} className="flex items-center gap-2">
           <span className="w-[0.7em] h-[0.7em] rounded-full bg-foreground inline-block" style={{ fontSize: '0.875rem' }} />
           <span className="text-label-large text-accent">Esteban Calvi</span>
         </a>
