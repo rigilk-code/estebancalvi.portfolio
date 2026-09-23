@@ -85,6 +85,13 @@ const Header = () => {
             >
               ES
             </button>
+            <span className="w-[2px] h-5 bg-foreground/30" />
+            <button
+              onClick={() => switchLang("pt")}
+              className={`transition-colors duration-200 ${lang === "pt" ? "text-accent" : "text-foreground/50 hover:text-foreground"}`}
+            >
+              PT
+            </button>
           </div>
           <a
             href="https://github.com/rigilk-code/estebancalvi.portfolio"
@@ -139,6 +146,13 @@ const Header = () => {
                 className={lang === "es" ? "text-accent" : "text-foreground/50"}
               >
                 ES
+              </button>
+              <span className="text-foreground/30">|</span>
+              <button
+                onClick={() => { switchLang("pt"); setOpen(false); }}
+                className={lang === "pt" ? "text-accent" : "text-foreground/50"}
+              >
+                PT
               </button>
             </div>
             <a
