@@ -2,9 +2,10 @@ import { createContext, useContext, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import en from "@/data/en.json";
 import es from "@/data/es.json";
+import pt from "@/data/pt.json";
 import type { ContentBlock } from "@/data/caseStudies";
 
-type Lang = "en" | "es";
+export type Lang = "en" | "es" | "pt";
 
 interface CaseData {
   slug: string;
@@ -42,11 +43,12 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   const navigate = useNavigate();
   const location = useLocation();
 
-  const lang: Lang = location.pathname.startsWith("/es") ? "es" : "en";
-  const t = lang === "es" ? castTranslations(es) : castTranslations(en);
+  const seg = location.pathname.split("/")[1];
+  const lang: Lang = seg === "es" || seg === "pt" ? seg : "en";
+  const t = castTranslations(({ en, es, pt } as Record<Lang, typeof en>)[lang]);
 
   const switchLang = (newLang: Lang) => {
-    const rest = location.pathname.replace(/^\/(en|es)(?=\/|$)/, "");
+    const rest = location.pathname.replace(/^\/(en|es|pt)(?=\/|$)/, "");
     navigate(`/${newLang}${rest}${location.hash}`);
   };
 

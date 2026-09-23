@@ -27,6 +27,9 @@ const App = () => (
             <Route path="/es" element={<Index />} />
             <Route path="/es/about" element={<About />} />
             <Route path="/es/case/:slug" element={<CaseStudy />} />
+            <Route path="/pt" element={<Index />} />
+            <Route path="/pt/about" element={<About />} />
+            <Route path="/pt/case/:slug" element={<CaseStudy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </LanguageProvider>
