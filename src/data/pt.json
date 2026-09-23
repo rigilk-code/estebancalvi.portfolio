@@ -271,7 +271,7 @@
     "education": "Formação",
     "languages": "Idiomas",
     "coreSkills": "Principais Habilidades",
-    "downloadResume": "Ver currículo completo ↗",
+    "downloadResume": "Ver currículo completo (eng) ↗",
     "downloadResumeLink": "https://docs.google.com/document/d/1p6ema1ejhm5wbeUfzh4nG2QXW4r3MAgHBfiqDzNwOd8/edit?usp=sharing",
     "experience": [
       {
@@ -327,7 +327,7 @@
       },
       {
         "name": "Português",
-        "level": "Intermediário"
+        "level": "Profissional"
       }
     ],
     "skills": [

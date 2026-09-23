@@ -145,7 +145,7 @@
     },
     "languagesData": [
       { "name": "English", "level": "Advanced" },
-      { "name": "Portuguese", "level": "Intermediate" }
+      { "name": "Portuguese", "level": "Professional" }
     ],
     "skills": ["UI Architecture", "Design Systems", "React", "TypeScript", "Figma", "Accessibility", "Micro-interactions", "React Native"]
   },
