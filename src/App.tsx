@@ -4,19 +4,21 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { getRouterBaseName } from "@/lib/router";
 import Index from "./pages/Index.tsx";
 import CaseStudy from "./pages/CaseStudy.tsx";
 import About from "./pages/About.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
+const routerBaseName = getRouterBaseName();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={routerBaseName}>
         <LanguageProvider>
           <Routes>
             <Route path="/" element={<Navigate to="/en" replace />} />
