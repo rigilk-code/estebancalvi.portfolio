@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Github } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { lang, t, switchLang, localePath } = useLanguage();
+  const navigate = useNavigate();
 
   const navItems = [
     { label: t.nav.home, hash: "home" },
