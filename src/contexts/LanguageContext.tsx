@@ -46,23 +46,11 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   const t = lang === "es" ? castTranslations(es) : castTranslations(en);
 
   const switchLang = (newLang: Lang) => {
-    const path = location.pathname;
-    const hash = location.hash;
-    if (newLang === "es") {
-      const clean = path.replace(/^\/es/, "") || "/";
-      navigate(`/es${clean === "/" ? "" : clean}${hash}`);
-    } else {
-      const clean = path.replace(/^\/es/, "") || "/";
-      navigate(`${clean}${hash}`);
-    }
+    const rest = location.pathname.replace(/^\/(en|es)(?=\/|$)/, "");
+    navigate(`/${newLang}${rest}${location.hash}`);
   };
 
-  const localePath = (path: string) => {
-    if (lang === "es") {
-      return `/es${path === "/" ? "" : path}`;
-    }
-    return path;
-  };
+  const localePath = (path: string) => `/${lang}${path === "/" ? "" : path}`;
 
   const value = useMemo(
     () => ({ lang, t, switchLang, localePath }),
