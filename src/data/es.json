@@ -50,7 +50,7 @@
         { "type": "paragraph", "text": "Procedimos a abstraer las responsabilidades de UI en repositorios separados: Atributos de Marca (objeto de marca + tema), una Librería de UI compartida (bloques de construcción que funcionaban en conjunto con los atributos de marca), y los Productos como consumidores de ambos." },
         { "type": "callout", "text": "La evolución final: construimos un CRM de Creación de Marcas que permitía al personal no técnico (como el equipo de marketing) crear MVPs para nuevas marcas ensamblando sus propios objetos de marca. El personal técnico los refinaría después según fuera necesario.", "variant": "info" },
         { "type": "divider" },
-        { "type": "cta", "text": "Ver la presentación completa →", "href": "https://docs.google.com/presentation/d/10a8UjC9g4OHefRCbkInq8jvuZ5YHjJfdqCw5oNRfh0I/edit?usp=sharing" }
+        { "type": "cta", "text": "Ver la presentación completa (eng) ↗", "href": "https://docs.google.com/presentation/d/10a8UjC9g4OHefRCbkInq8jvuZ5YHjJfdqCw5oNRfh0I/edit?usp=sharing" }
       ]
     },
     {
@@ -84,7 +84,7 @@
         { "type": "imageRef", "id": "duollar-ctas" },
         { "type": "callout", "text": "Con estas cinco decisiones definidas, creamos un set completo de pantallas template (landings, formularios, vistas móviles, calls to action y un sistema tipográfico) dándole al equipo de desarrollo todo lo necesario para seguir construyendo.", "variant": "success" },
         { "type": "divider" },
-        { "type": "cta", "text": "Ver la presentación completa →", "href": "https://docs.google.com/presentation/d/1bbAobDY-hjwaYA-gYO6ZR7dOulbqChINylosvDPbMoY/edit?usp=sharing" }
+        { "type": "cta", "text": "Ver la presentación completa (eng) ↗", "href": "https://docs.google.com/presentation/d/1bbAobDY-hjwaYA-gYO6ZR7dOulbqChINylosvDPbMoY/edit?usp=sharing" }
       ]
     }
   ],
@@ -163,7 +163,7 @@
     "paragraphs": [
       "Soy Design Engineer Senior con más de 10 años de experiencia construyendo productos digitales escalables.",
       "Formación de grado en Diseño Gráfico (Universidad de Buenos Aires) con profunda experiencia en arquitectura UI, sistemas de diseño y desarrollo frontend.",
-      "Especializado en entornos fintech y enterprise, trabajando entre diseño e ingeniería para entregar interfaces robustas, accesibles y visualmente refinadas. Fuerte enfoque en librerías de componentes, micro-interacciones animadas y sistemas UI amigables para desarrolladores. Experiencia colaborando con equipos multifuncionales y aprovechando herramientas modernas, incluyendo flujos de desarrollo asistidos por IA.",
+      "Especializado en entornos fintech y enterprise, trabajando en la intersección entre diseño e ingeniería para entregar interfaces robustas, accesibles y visualmente refinadas. Fuerte enfoque en librerías de componentes, micro-interacciones animadas y sistemas UI amigables para desarrolladores. Experiencia colaborando con equipos multifuncionales y aprovechando herramientas modernas, incluyendo flujos de desarrollo asistidos por IA.",
       "En paralelo a mi trabajo en desarrollo de software, soy artista de comics semi-profesional. Esta formación informa mi enfoque hacia la composición visual, la narrativa y el diseño UI orientado al detalle."
     ]
   },

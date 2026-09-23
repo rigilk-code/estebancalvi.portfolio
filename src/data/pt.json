@@ -143,7 +143,7 @@
         },
         {
           "type": "cta",
-          "text": "Ver a apresentação completa →",
+          "text": "Ver a apresentação completa (eng) ↗",
           "href": "https://docs.google.com/presentation/d/10a8UjC9g4OHefRCbkInq8jvuZ5YHjJfdqCw5oNRfh0I/edit?usp=sharing"
         }
       ]
@@ -259,7 +259,7 @@
         },
         {
           "type": "cta",
-          "text": "Ver a apresentação completa →",
+          "text": "Ver a apresentação completa (eng) ↗",
           "href": "https://docs.google.com/presentation/d/1bbAobDY-hjwaYA-gYO6ZR7dOulbqChINylosvDPbMoY/edit?usp=sharing"
         }
       ]
@@ -272,7 +272,7 @@
     "languages": "Idiomas",
     "coreSkills": "Principais Habilidades",
     "downloadResume": "Ver currículo completo ↗",
-    "downloadResumeLink": "https://docs.google.com/document/d/1kOl-wC3wd4IsHKLvlJTY0zds_sh5-qhCEUaVBcCwwBY/edit?usp=sharing",
+    "downloadResumeLink": "https://docs.google.com/document/d/1p6ema1ejhm5wbeUfzh4nG2QXW4r3MAgHBfiqDzNwOd8/edit?usp=sharing",
     "experience": [
       {
         "role": "UI Developer",
@@ -343,7 +343,7 @@
   },
   "contact": {
     "label": "Contato",
-    "heading": "Vamos construir algo juntos.",
+    "heading": "Bora construir algo juntos!",
     "copyright": "© {year} Esteban Calvi. GNU General Public License v3.0.",
     "location": "Buenos Aires, Argentina"
   },
@@ -355,7 +355,7 @@
     "paragraphs": [
       "Sou Design Engineer Sênior com mais de 10 anos de experiência construindo produtos digitais escaláveis.",
       "Formação em Design Gráfico (Universidade de Buenos Aires), com profunda experiência em arquitetura de UI, sistemas de design e desenvolvimento frontend.",
-      "Especializado em ambientes fintech e enterprise, atuando entre design e engenharia para entregar interfaces robustas, acessíveis e visualmente refinadas. Forte foco em bibliotecas de componentes, microinterações animadas e sistemas de UI amigáveis para desenvolvedores. Experiência colaborando com times multifuncionais e aproveitando ferramentas modernas, incluindo fluxos de desenvolvimento assistidos por IA.",
+      "Especializado em ambientes fintech e enterprise, atuando na interseção entre design e engenharia para entregar interfaces robustas, acessíveis e visualmente refinadas. Forte foco em bibliotecas de componentes, microinterações animadas e sistemas de UI amigáveis para desenvolvedores. Experiência colaborando com times multifuncionais e aproveitando ferramentas modernas, incluindo fluxos de desenvolvimento assistidos por IA.",
       "Paralelamente ao meu trabalho com desenvolvimento de software, sou artista de quadrinhos semiprofissional. Essa bagagem orienta minha abordagem de composição visual, narrativa e design de UI voltado aos detalhes."
     ]
   },
