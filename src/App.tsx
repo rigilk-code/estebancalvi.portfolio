@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,19 +16,21 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter>
+      <BrowserRouter>
         <LanguageProvider>
           <Routes>
-            <Route path="/es/" element={<Index />} />
+            <Route path="/" element={<Navigate to="/en" replace />} />
+            <Route path="/about" element={<Navigate to="/en/about" replace />} />
+            <Route path="/en" element={<Index />} />
+            <Route path="/en/about" element={<About />} />
+            <Route path="/en/case/:slug" element={<CaseStudy />} />
+            <Route path="/es" element={<Index />} />
             <Route path="/es/about" element={<About />} />
             <Route path="/es/case/:slug" element={<CaseStudy />} />
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/case/:slug" element={<CaseStudy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </LanguageProvider>
-      </HashRouter>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
