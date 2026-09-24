@@ -96,6 +96,10 @@ const HeroSection = () => {
         </motion.div>
 
         <div className="max-w-2xl">
+          <motion.p variants={fadeUp} className="text-label-large text-accent mb-4">
+            {t.hero.label}
+          </motion.p>
+
           <motion.h1
             className="text-display-large md:text-display-xlarge mb-8 leading-tight"
           >
@@ -108,10 +112,6 @@ const HeroSection = () => {
             </motion.span>
             ,
           </motion.h1>
-
-          <motion.p variants={fadeUp} className="text-label-large text-accent mb-4">
-            {t.hero.label}
-          </motion.p>
 
           <motion.div variants={fadeUp}>
             <div className="w-24 h-[3px] bg-foreground mb-8" />
