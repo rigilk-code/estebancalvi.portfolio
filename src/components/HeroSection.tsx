@@ -70,12 +70,31 @@ const HeroSection = () => {
             <p className="text-label-large text-accent mb-4">{t.hero.label}</p>
           </ScrollReveal>
           <motion.h1
-            initial={{ opacity: 0, x: reduceMotion ? 0 : 72 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ ...entranceTransition, delay: reduceMotion ? 0 : 0.12 }}
+            initial="hidden"
+            animate="visible"
             className="text-display-large md:text-display-xlarge mb-8 leading-tight"
           >
-            {t.hero.heading1} <br /><span className="text-accent">{t.hero.heading2}</span>,
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, x: reduceMotion ? 0 : 72 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ ...entranceTransition, delay: reduceMotion ? 0 : 0.45 }}
+              className="inline-block"
+            >
+              {t.hero.heading1}
+            </motion.span>{" "}
+            <br />
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, x: reduceMotion ? 0 : 72 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ ...entranceTransition, delay: reduceMotion ? 0 : 0.7 }}
+              className="inline-block text-accent"
+            >
+              {t.hero.heading2}
+            </motion.span>,
           </motion.h1>
           <ScrollReveal delay={0.2}>
             <div className="w-24 h-[3px] bg-foreground mb-8" />
