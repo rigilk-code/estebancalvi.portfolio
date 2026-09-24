@@ -108,9 +108,8 @@ const HeroSection = () => {
             </motion.span>{" "}
             <br />
             <motion.span variants={fromRight} className="inline-block text-accent">
-              {t.hero.heading2}
+              {t.hero.heading2},
             </motion.span>
-            ,
           </motion.h1>
 
           <motion.div variants={fadeUp}>
