@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import portrait from "@/assets/esteban-portrait.png";
-import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useParallax } from "@/hooks/use-parallax";
 
@@ -10,9 +9,41 @@ const HeroSection = () => {
   const { ref, offset } = useParallax();
   const reduceMotion = useReducedMotion();
 
-  const entranceTransition = {
-    duration: reduceMotion ? 0 : 0.7,
-    ease: [0.22, 1, 0.36, 1] as const,
+  const container: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: reduceMotion ? 0 : 0.25,
+        delayChildren: reduceMotion ? 0 : 0.1,
+      },
+    },
+  };
+
+  const fromLeft: Variants = {
+    hidden: { opacity: 0, x: reduceMotion ? 0 : -72 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: reduceMotion ? 0 : 0.7, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const fromRight: Variants = {
+    hidden: { opacity: 0, x: reduceMotion ? 0 : 72 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: reduceMotion ? 0 : 0.7, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 32 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: reduceMotion ? 0 : 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -47,14 +78,14 @@ const HeroSection = () => {
         style={{ transform: `translateY(${offset * 0.36}px)` }}
       />
 
-      {/* Portrait */}
-      <div className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:px-40 py-16 lg:py-24">
-        <motion.div
-          initial={{ opacity: 0, x: reduceMotion ? 0 : -72 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={entranceTransition}
-          className="flex-shrink-0 md:ml-8 lg:ml-0"
-        >
+      {/* Portrait + typographic play — single entrance sequence, plays once */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 px-6 md:px-16 lg:px-40 py-16 lg:py-24"
+      >
+        <motion.div variants={fromLeft} className="flex-shrink-0 md:ml-8 lg:ml-0">
           <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--accent))]">
             <img
               src={portrait}
@@ -64,39 +95,25 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Typographic play */}
         <div className="max-w-2xl">
-          <ScrollReveal delay={0.1}>
-            <p className="text-label-large text-accent mb-4">{t.hero.label}</p>
-          </ScrollReveal>
           <motion.h1
-            initial="hidden"
-            animate="visible"
             className="text-display-large md:text-display-xlarge mb-8 leading-tight"
           >
-            <motion.span
-              variants={{
-                hidden: { opacity: 0, x: reduceMotion ? 0 : 72 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              transition={{ ...entranceTransition, delay: reduceMotion ? 0 : 0.45 }}
-              className="inline-block"
-            >
+            <motion.span variants={fromRight} className="inline-block">
               {t.hero.heading1}
             </motion.span>{" "}
             <br />
-            <motion.span
-              variants={{
-                hidden: { opacity: 0, x: reduceMotion ? 0 : 72 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              transition={{ ...entranceTransition, delay: reduceMotion ? 0 : 0.7 }}
-              className="inline-block text-accent"
-            >
+            <motion.span variants={fromRight} className="inline-block text-accent">
               {t.hero.heading2}
-            </motion.span>,
+            </motion.span>
+            ,
           </motion.h1>
-          <ScrollReveal delay={0.2}>
+
+          <motion.p variants={fadeUp} className="text-label-large text-accent mb-4">
+            {t.hero.label}
+          </motion.p>
+
+          <motion.div variants={fadeUp}>
             <div className="w-24 h-[3px] bg-foreground mb-8" />
             <div className="space-y-4 text-body-large leading-relaxed">
               <p>{t.hero.description}</p>
@@ -107,9 +124,9 @@ const HeroSection = () => {
             >
               {t.hero.cta}
             </Link>
-          </ScrollReveal>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
